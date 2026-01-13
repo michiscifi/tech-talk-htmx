@@ -1,0 +1,8 @@
+#todo-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#todo-list button {
+    min-width: 70px;
+}

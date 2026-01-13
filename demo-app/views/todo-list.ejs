@@ -1,0 +1,5 @@
+<ul id="todo-list">
+    <% todoList.forEach(item => { %>
+        <%- include('todo-item.ejs', {item: item}) %>
+    <% }) %>
+</ul>

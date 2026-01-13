@@ -1,0 +1,36 @@
+<li id="item-<%= item.id %>">
+    <button
+        hx-get="/todos/<%= item.id %>/detail"
+        hx-target="this"
+        hx-swap="outerHTML"
+        >
+        detail
+    </button>
+
+    <button hx-patch="/todos/<%= item.id %>/toggle"
+            hx-target="#item-<%= item.id %>">
+        <% if (item.completed) { %>
+            repeat
+        <% } else { %>
+            done
+        <% } %>
+    </button>
+    <button hx-delete="/todos/<%= item.id %>"
+            hx-target="#item-<%= item.id %>"
+            hx-confirm="Really delete this item?"
+            hx-swap="delete">
+        delete
+    </button>
+    <span id="task-<%= item.id %>">
+        <button hx-get="/todos/<%= item.id %>/edit"
+                hx-target="#task-<%= item.id %>">
+            edit
+        </button>
+
+        <% if (item.completed) { %>
+            <strike><%= item.task %></strike>
+        <% } else { %>
+            <%= item.task %>
+        <% } %>
+    </span>
+</li>

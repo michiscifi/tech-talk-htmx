@@ -1,0 +1,11 @@
+<div style="border:1px solid white; padding: 2px; margin: 2px">
+    id: <%= item.id %>
+    <br>
+    task:  <%= item.task %>
+    <br>
+    completed: <% if (item.completed) { %> yes <% } else { %>no<% } %>
+    <br>
+    <button hx-get="/todos/<%= item.id %>" hx-target="closest li" hx-swap="innerHTML">
+        close
+    </button>
+</div>

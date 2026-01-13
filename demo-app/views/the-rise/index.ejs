@@ -1,0 +1,27 @@
+<html>
+<head></head>
+<body>
+<a href="/part2" id="myLink">part2</a>
+<hr>
+<div id="target">
+    insert stuff here
+</div>
+<script type="text/javascript">
+    window.onload = function () {
+        var myLink = document.getElementById("myLink");
+
+        myLink.onclick = function () {
+            const req = new XMLHttpRequest();
+            req.onload = function () {
+                var target = document.getElementById("target");
+                target.innerHTML = this.responseText;
+            }
+
+            req.open("GET", "/part2");
+            req.send();
+            return false;
+        }
+    }
+</script>
+</body>
+</html>

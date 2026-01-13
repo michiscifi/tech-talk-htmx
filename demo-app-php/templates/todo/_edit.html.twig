@@ -1,0 +1,9 @@
+<form
+    hx-patch="/todo/{{ todo.id }}"
+    hx-target="#item-{{ todo.id }}"
+    hx-swap="outerHTML"
+    style="display:inline">
+
+    <input type="text" name="task" value="{{ todo.task }}">
+    <button>save</button>
+</form>

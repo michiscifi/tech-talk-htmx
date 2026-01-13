@@ -1,0 +1,8 @@
+<form hx-patch="/todos/<%= item.id %>"
+      hx-target="#item-<%= item.id %>"
+      hx-swap="outerHTML"
+      style="display: inline">
+    <button>save</button>
+    <input type="text" name="task" value="<%= item.task %>" >
+</form>
+

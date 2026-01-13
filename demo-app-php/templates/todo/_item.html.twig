@@ -1,0 +1,29 @@
+<li id="item-{{ todo.id }}">
+    <span id="task-{{ todo.id }}">
+        {% if todo.completed %}
+            <strike>{{ todo.task }}</strike>
+        {% else %}
+            {{ todo.task }}
+        {% endif %}
+
+        <button
+            hx-get="/todo/{{ todo.id }}/edit"
+            hx-target="#task-{{ todo.id }}">
+            edit
+        </button>
+    </span>
+
+    <button
+        hx-put="/todo/{{ todo.id }}/toggle"
+        hx-target="#item-{{ todo.id }}">
+        {{ todo.completed ? 'repeat' : 'done' }}
+    </button>
+
+    <button
+        hx-delete="/todo/{{ todo.id }}"
+        hx-target="#item-{{ todo.id }}"
+        hx-confirm="Really delete this item?"
+        hx-swap="delete">
+        delete
+    </button>
+</li>
