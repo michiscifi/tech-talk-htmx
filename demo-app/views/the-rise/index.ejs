@@ -11,8 +11,8 @@
         var myLink = document.getElementById("myLink");
 
         myLink.onclick = function () {
-            const req = new XMLHttpRequest();
-            req.onload = function () {
+            var xhr = new XMLHttpRequest();
+            xhr.onload = function () {
                 var target = document.getElementById("target");
                 target.innerHTML = this.responseText;
             }
