@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="{{ url_for('static', filename='faviocon.ico') }}" type="image/x-icon">
+    <title>HTMX demo - Todo</title>
+    <script src="{{ url_for('static', filename='htmx.js') }}"></script>
+
+    <link rel="stylesheet" href="https://vasanthv.github.io/stylize.css/stylize.css" type="text/css">
+    {#    <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">#}
+    {#   <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-vader.css" type="text/css">#}
+    {#        <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-dark.css" type="text/css">#}
+    {#    <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura-earthly.css" type="text/css">#}
+    {#    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">#}
+    {# <link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/dark.css'>#}
+    {#    <link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.css'>#}
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<main>
+    {% block content %}{% endblock %}
+</main>
+</body>
+</html>

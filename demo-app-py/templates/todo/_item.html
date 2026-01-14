@@ -1,0 +1,21 @@
+<li class="todo-item" id="todo-{{ todo.id }}">
+    <div class="task-content" id="task-content-{{ todo.id }}">
+        <input hx-trigger="change"
+               hx-patch="/todos/{{ todo.id }}/toggle"
+               type="checkbox"
+               id="todo-task-{{ todo.id }}" {% if todo.completed %}checked="checked" {% endif %}/>
+        <label for="todo-task-{{ todo.id }}">{{ todo.task }}</label>
+    </div>
+    <div class="todo-actions">
+        <button type="button" id="edit-button-{{ todo.id }}"
+                 hx-get="/todos/{{ todo.id }}/edit"
+                 hx-target="#task-content-{{ todo.id }}"
+                >Edit</button>
+        <button type="button"
+                hx-delete="/todos/{{ todo.id }}"
+                hx-target="#todo-{{ todo.id }}"
+                hx-confirm="Really delete this item?"
+                hx-swap="delete"
+        >Delete</button>
+    </div>
+</li>

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div id="app">
+        <h1>Todo</h1>
+        {% include "todo/_create.html" %}
+
+        {% include "todo/_list.html" %}
+    </div>
+    <div id="error"></div>
+{% endblock %}

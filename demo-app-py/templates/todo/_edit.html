@@ -1,0 +1,11 @@
+<input id="task-input-{{ todo.id }}" type="text" name="task"  value="{{ todo.task }}" />
+
+<button type="button"
+        id="edit-button-{{ todo.id }}"
+        hx-patch="/todos/{{ todo.id }}"
+        hx-target="#todo-{{ todo.id }}"
+        hx-include="#task-input-{{ todo.id }}"
+        hx-swap-oob="true"
+        hx-swap="outerHTML"
+>Save
+</button>

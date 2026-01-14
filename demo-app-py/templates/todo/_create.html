@@ -1,0 +1,7 @@
+<form hx-post="/todos"
+      hx-target="#todo-list"
+      hx-swap="beforeend"
+      hx-on::after-request="this.reset()">
+    <input type="text" id="task" name="task">
+    <input type="submit" value="create task">
+</form>

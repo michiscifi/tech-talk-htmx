@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div id="app">
+        <h1>Todo</h1>
+
+        <form>
+            {#        <label for="task">New Task</label>#}
+            <input type="text" id="task" name="task">
+            <input type="submit" value="create task">
+        </form>
+
+        <hr/>
+        <ul class="todo-list">
+            <li class="todo-item">
+                <div class="task-content">
+                    <input type="checkbox" id="todo-1">
+                    <label for="todo-1">Einkaufen gehen</label>
+                </div>
+                <div class="todo-actions">
+                    <button type="button">Edit</button>
+                    <button type="button">Delete</button>
+                </div>
+            </li>
+            <li class="todo-item">
+                <div class="task-content">
+                    <input type="checkbox" id="todo-1" checked="checked">
+                    <label for="todo-1">Einkaufen gehen</label>
+                </div>
+                <div class="todo-actions">
+                    <button type="button">Edit</button>
+                    <button type="button">Delete</button>
+                </div>
+            </li>
+            <li class="todo-item">
+                <div class="task-content">
+                    <input type="text" value="Einkaufen gehen">
+                </div>
+                <div class="todo-actions">
+                    <button type="button">Save</button>
+                    <button type="button">Delete</button>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+{% endblock %}
